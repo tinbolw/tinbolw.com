@@ -1,11 +1,11 @@
-// TODO add enum status type
-import { Suspense } from 'react';
-import Card from './card';
-import { status } from './enums';
 import { neon } from '@neondatabase/serverless';
+import Card from './card';
+import { status } from '../_lib/enums';
+
 export const dynamic = 'force-dynamic';
+
 async function getData(status:status) {
-  const sql = neon(process.env.DATABASE_URL);
+  const sql = neon(process.env.DATABASE_URL as string);
   const response = sql`SELECT * FROM projects WHERE status = ${status};`;
   return response;
 }
