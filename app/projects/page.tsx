@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
 import { status } from './_lib/enums';
+import StyledLink from '../_components/styledlink';
 import CardRow from './_components/cardrow';
 import CardRowSkeleton from './_components/cardrowskeleton';
+import RefreshButton from './_components/refreshbutton';
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
               Projects
             </h1>
           </div>
-          <div className="flex">
+          <div className="flex justify-center">
             Past, present, and future projects.
           </div>
           <div className="flex flex-col">
@@ -48,7 +49,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-row gap-2 justify-center">
-            <Link href={"/"}>Home</Link>
+            <StyledLink href="/" label="Home" />
+            <RefreshButton />
           </div>
         </div>
       </main>

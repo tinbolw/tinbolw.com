@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import StyledLink from "../_components/styledlink";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
             I am studying Computer Science at the University of Washington.
           </div>
           <div className="flex flex-row gap-2 justify-center">
-            <Link href={"/"}>Home</Link>
+            <StyledLink href="/" label="Home"/>
           </div>
         </div>
       </main>
