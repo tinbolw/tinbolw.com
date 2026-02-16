@@ -6,6 +6,9 @@ import CardRowSkeleton from './_components/cardrowskeleton';
 import RefreshButton from './_components/refreshbutton';
 import AccountAction from './_components/accountaction';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default function Home() {
   return (
     <div>
