@@ -4,13 +4,9 @@ import StyledLink from '../_components/styledlink';
 import CardRow from './_components/cardrow';
 import CardRowSkeleton from './_components/cardrowskeleton';
 import RefreshButton from './_components/refreshbutton';
-import LoginButton from './_components/loginbutton';
-import { getSession } from './_lib/sessionhandler';
-import LogoutButton from './_components/logoutbutton';
+import AccountAction from './_components/accountaction';
 
-export default async function Home() {
-  const session = await getSession();
-
+export default function Home() {
   return (
     <div>
       <div className="flex justify-center">
@@ -54,7 +50,9 @@ export default async function Home() {
       <div className="flex flex-row gap-2 justify-center">
         <StyledLink href="/" label="Home" />
         <RefreshButton />
-        {!session ? <LoginButton /> : <div className="flex flex-row gap-2"><LogoutButton /> {session.user.name}</div>}
+        <Suspense fallback={<div>Loading...</div>}>
+          <AccountAction />
+        </Suspense>
       </div>
     </div>
   );
