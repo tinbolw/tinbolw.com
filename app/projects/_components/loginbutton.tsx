@@ -6,8 +6,8 @@ export default function LoginButton() {
     async function login() {
         await authClient.signIn.social({
             provider: "google",
-            callbackURL: "/projects",
-            errorCallbackURL: "/projects",
+            callbackURL: "/projects/edit",
+            errorCallbackURL: "/projects/edit",
         })
     }
 

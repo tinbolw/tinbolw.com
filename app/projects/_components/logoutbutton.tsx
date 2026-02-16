@@ -8,7 +8,7 @@ export default function LogoutButton() {
         await authClient.signOut({
             fetchOptions: {
                 onSuccess: () => {
-                    redirect("/projects");
+                    redirect("/projects/edit");
                 },
             },
         });
