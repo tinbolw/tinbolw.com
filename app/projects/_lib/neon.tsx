@@ -5,6 +5,17 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 /**
+ * Returns the number of projects with the given status.
+ * @param status 
+ * @returns 
+ */
+export async function getProjectCount(status:status) {
+  const sql = neon(process.env.DATABASE_URL as string);
+  const response = await sql`SELECT COUNT(*) FROM projects WHERE status = ${status};`;
+  return parseInt(response[0].count);
+}
+
+/**
  * Returns a row of projects with a given status.
  * @param status The status of the projects
  * @returns ReactNode[]
@@ -24,10 +35,8 @@ export async function getRow(status:status) {
  * @param status The status of the projects
  * @returns ReactNode[]
  */
-export async function getAllRows(status:status) {
+export function getAllRows(status:status, projectCount:number) {
   const sql = neon(process.env.DATABASE_URL as string);
-  const response = await sql`SELECT COUNT(*) FROM projects WHERE status = ${status};`;
-  const projectCount = parseInt(response[0].count);
 
   let i = projectCount;
   let projects = [];
