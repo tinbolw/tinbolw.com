@@ -18,8 +18,6 @@ export default async function Page({title, status}:{title:string, status:status}
       <div className="flex flex-col">
         {
           (getAllRows(status, projectCount)).map((projects, index) => {
-            console.log(index);
-            console.log(projects);
             return <div key={index} className="flex flex-row p-1 gap-2 overflow-auto">
               <Suspense fallback={<CardRowSkeleton/ >}>
                 {projects}

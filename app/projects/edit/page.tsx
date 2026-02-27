@@ -3,10 +3,8 @@ import { status } from '../_lib/enums';
 import StyledLink from '@/app/_components/styledlink';
 import CardRow from '../_components/cardrow';
 import CardRowSkeleton from '../_components/cardrowskeleton';
-import RefreshButton from '../_components/refreshbutton';
+import { RefreshButton, LoginButton, LogoutButton } from '../_components/buttons';
 import { getSession } from "../_lib/sessionhandler"
-import LoginButton from '../_components/loginbutton';
-import LogoutButton from '../_components/logoutbutton';
 
 export default async function Page() {
     const session = await getSession();
