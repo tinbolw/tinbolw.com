@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { refreshProjects } from "../_lib/refreshprojects";
+// TODO change to work for current url
 
 export default function RefreshButton() {
     function Refresh() {

@@ -1,6 +1,7 @@
 export default function CardRowSkeleton() {
     return (
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 overflow-hidden">
+            <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />
@@ -10,7 +11,7 @@ export default function CardRowSkeleton() {
 
 function CardSkeleton() {
     return (
-        <div className="flex flex-col bg-zinc-900 p-3 rounded-lg">
+        <div className="flex flex-col bg-zinc-900 gap-2 p-4 rounded-lg">
             <div className="flex flex-col animate-pulse gap-2">
                 <div className="bg-zinc-700 w-40 h-5 rounded-lg"></div>
                 <div className="bg-zinc-700 w-40 h-5 rounded-lg"></div>
