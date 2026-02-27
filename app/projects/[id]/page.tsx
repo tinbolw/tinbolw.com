@@ -1,6 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 import Tag from '../_components/tag';
 import StyledLink from '@/app/_components/styledlink';
+import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,12 +12,16 @@ async function getProject(id: number) {
 }
 
 export default async function Home({ params }: { params: Promise<{ id: string }> }) {
+    // https://github.com/vercel/next.js/discussions/36723#discussioncomment-15640848
+    const headersList = await headers();
+    const referer = headersList.get("referer") || "";
+
     return (
-        <Page id={Number((await params).id)} />
+        <Page id={Number((await params).id)} referer={referer} />
     )
 }
 
-async function Page({ id }: { id: number }) {
+async function Page({ id, referer }: { id: number, referer: string }) {
     if (isNaN(id)) {
         return (
             <div>
@@ -53,7 +58,10 @@ async function Page({ id }: { id: number }) {
                     <div className="bg-zinc-700 p-2 rounded-lg flex-grow">
                         {project.description}
                     </div>
-                    <StyledLink href="/projects" label="Back"/>
+                    {
+                        referer.includes("/projects") ? <StyledLink href={referer} label="Back" /> :
+                            <StyledLink href="/projects" label="Back" />
+                    }
                 </div>
             )
         }

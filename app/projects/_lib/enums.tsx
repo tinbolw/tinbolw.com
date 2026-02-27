@@ -14,3 +14,7 @@ export enum status {
   Current = "Current",
   Future = "Future",
 }
+
+export enum rowConfig {
+  PROJECTSPERCOLUMN = 3,
+};

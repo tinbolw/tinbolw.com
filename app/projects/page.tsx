@@ -3,7 +3,7 @@ import { status } from './_lib/enums';
 import StyledLink from '../_components/styledlink';
 import CardRow from './_components/cardrow';
 import CardRowSkeleton from './_components/cardrowskeleton';
-import RefreshButton from './_components/refreshbutton';
+import {RefreshButton} from './_components/buttons';
 
 export default function Home() {
   return (
