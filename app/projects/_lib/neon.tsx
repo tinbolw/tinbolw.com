@@ -22,6 +22,7 @@ export async function getProjectCount(status:status) {
  */
 export async function getRow(status:status) {
   const sql = neon(process.env.DATABASE_URL as string);
+  // TODO better error handling
   const response = sql`
     SELECT *
     FROM projects
