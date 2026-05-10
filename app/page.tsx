@@ -12,8 +12,8 @@ export default function Home() {
         Learn more about me and my projects below.
       </div>
       <div className="flex flex-row gap-2 justify-center">
-        <StyledLink href="/about" label="About Me" />
         <StyledLink href="/projects" label="Projects" />
+        <StyledLink href="https://wiki.tinbolw.com" label="Wiki" />
       </div>
     </div>
   );
