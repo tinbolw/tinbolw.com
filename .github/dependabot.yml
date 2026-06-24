@@ -4,3 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      minor-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
