@@ -13,9 +13,6 @@ export default function Home() {
           Projects
         </h1>
       </div>
-      <div className="flex justify-center">
-        Past, present, and future projects.
-      </div>
       <div className="flex flex-col">
         <div className="flex flex-col">
           <div className="flex">
