@@ -7,12 +7,20 @@ export default function Home() {
       <div className="flex justify-center">
         <h1 className="text-3xl">{`Hi, I'm Thomas Van`}</h1>
       </div>
-      <div className="flex space-x-3">
+      <div className="flex text-left">
         <div>
+          <Image
+            className="rounded-lg h-auto object-contain float-right ml-3"
+            loading="eager"
+            src="/pfp.jpg"
+            width="180"
+            height="180"
+            alt="Profile picture"
+          />
           <p>
             {`I'm a web developer specializing in full-stack development with several years of
-              experience from personal projects. I've worked on projects with the open source
-              community, and maintained apps with feedback from real users.`}
+              programming experience from personal projects. I've worked on projects with an open
+              source community, and maintained apps with feedback from real users.`}
           </p>
           <br />
           <p>
@@ -34,14 +42,6 @@ export default function Home() {
             {`.`}
           </p>
         </div>
-        <Image
-          className="rounded-lg"
-          loading="eager"
-          src="/pfp.jpg"
-          width="200"
-          height="200"
-          alt="Profile picture"
-        />
       </div>
       <div className="flex flex-row gap-2 justify-center">
         <StyledLink href="/projects" label="Projects" />
