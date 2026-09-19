@@ -55,7 +55,7 @@ async function Page({ id, referer }: { id: number, referer: string }) {
                             }
                         </div>
                     </div>
-                    <div className="bg-zinc-700 p-2 rounded-lg flex-grow">
+                    <div className="bg-zinc-700 p-2 rounded-lg grow">
                         {project.description}
                     </div>
                     {
