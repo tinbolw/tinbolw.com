@@ -19,8 +19,8 @@ export default function Home() {
           />
           <p>
             {`I'm a web developer specializing in full-stack development with several years of
-              programming experience from personal projects. I've worked on projects with an open
-              source community, and maintained apps with feedback from real users.`}
+              programming experience from personal projects. I've also worked on a project shortly
+              with an open source community, and maintained it with feedback from real users.`}
           </p>
           <br />
           <p>
