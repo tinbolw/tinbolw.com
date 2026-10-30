@@ -1,0 +1,7 @@
+.next
+node_modules
+out
+build
+.github
+pnpm-lock.yaml
+README.md

@@ -17,4 +17,4 @@ export enum status {
 
 export enum rowConfig {
   PROJECTSPERCOLUMN = 3,
-};
+}

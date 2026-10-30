@@ -1,17 +1,15 @@
-import { Suspense } from 'react';
-import { status } from './_lib/enums';
-import StyledLink from '../_components/styledlink';
-import CardRow from './_components/cardrow';
-import CardRowSkeleton from './_components/cardrowskeleton';
-import {RefreshButton} from './_components/buttons';
+import { Suspense } from "react";
+import { status } from "./_lib/enums";
+import StyledLink from "../_components/styledlink";
+import CardRow from "./_components/cardrow";
+import CardRowSkeleton from "./_components/cardrowskeleton";
+import { RefreshButton } from "./_components/buttons";
 
 export default function Home() {
   return (
     <div>
       <div className="flex justify-center">
-        <h1 className="text-3xl">
-          Projects
-        </h1>
+        <h1 className="text-3xl">Projects</h1>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col">

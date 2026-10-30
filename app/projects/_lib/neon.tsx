@@ -6,12 +6,13 @@ import { ReactNode } from "react";
 
 /**
  * Returns the number of projects with the given status.
- * @param status 
- * @returns 
+ * @param status
+ * @returns
  */
-export async function getProjectCount(status:status) {
+export async function getProjectCount(status: status) {
   const sql = neon(process.env.DATABASE_URL as string);
-  const response = await sql`SELECT COUNT(*) FROM projects WHERE status = ${status};`;
+  const response =
+    await sql`SELECT COUNT(*) FROM projects WHERE status = ${status};`;
   return parseInt(response[0].count);
 }
 
@@ -20,7 +21,7 @@ export async function getProjectCount(status:status) {
  * @param status The status of the projects
  * @returns ReactNode[]
  */
-export async function getRow(status:status) {
+export async function getRow(status: status) {
   const sql = neon(process.env.DATABASE_URL as string);
   // TODO better error handling
   const response = sql`
@@ -36,7 +37,7 @@ export async function getRow(status:status) {
  * @param status The status of the projects
  * @returns ReactNode[]
  */
-export function getAllRows(status:status, projectCount:number) {
+export function getAllRows(status: status, projectCount: number) {
   const sql = neon(process.env.DATABASE_URL as string);
 
   let i = projectCount;
@@ -52,14 +53,21 @@ export function getAllRows(status:status, projectCount:number) {
           OFFSET ${projectCount - i} ROWS
           FETCH NEXT ${rowConfig.PROJECTSPERCOLUMN} ROWS ONLY;`;
         resolve(
-          response.map(project => {
-            return <Link key={project.id} href={`/projects/${project.id}`}>
-              <Card className="transition hover:ring-2" title={project.title} about={project.about} tags={project.tags} />
-            </Link>
-          })
+          response.map((project) => {
+            return (
+              <Link key={project.id} href={`/projects/${project.id}`}>
+                <Card
+                  className="transition hover:ring-2"
+                  title={project.title}
+                  about={project.about}
+                  tags={project.tags}
+                />
+              </Link>
+            );
+          }),
         );
-      })
-    )
+      }),
+    );
     i -= rowConfig.PROJECTSPERCOLUMN;
   }
   if (i > 0) {
@@ -73,14 +81,21 @@ export function getAllRows(status:status, projectCount:number) {
           OFFSET ${projectCount - i} ROWS
           FETCH NEXT ${i} ROWS ONLY;`;
         resolve(
-          response.map(project => {
-            return <Link key={project.id} href={`/projects/${project.id}`}>
-              <Card className="transition hover:ring-2" title={project.title} about={project.about} tags={project.tags} />
-            </Link>
-          })
+          response.map((project) => {
+            return (
+              <Link key={project.id} href={`/projects/${project.id}`}>
+                <Card
+                  className="transition hover:ring-2"
+                  title={project.title}
+                  about={project.about}
+                  tags={project.tags}
+                />
+              </Link>
+            );
+          }),
         );
-      })
-    )
+      }),
+    );
   }
   return projects;
 }
